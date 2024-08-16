@@ -1,0 +1,185 @@
+@font-face {
+	font-family: Inconsolata;
+	src: url("./fonts/Inconsolata.ttf");
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Inconsolata, serif;
+}
+
+body {
+	background: #f0ede4;
+}
+
+.top-bar {
+	width: 100vw;
+	height: min(150px, 15vh);
+	background: #0f52ba;
+	box-shadow: 0px 4px 6px #000;
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr;
+	grid-template-rows: 1fr;
+}
+
+.top-bar > .header-container {
+	font-size: 3rem;
+	color: #d9d9d9;
+	grid-column: 2 / 3;
+}
+
+.header-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.top-bar > .button-container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+}
+
+.top-bar button {
+	grid-column: 3 / 4;
+	width: 40%;
+	height: 30%;
+	border-radius: 10px;
+	margin: 16px;
+	background: #222021;
+	color: #b6bebc;
+	font-size: 1.1rem;
+}
+
+.top-bar button:hover {
+	color: white;
+}
+
+.library-display {
+	padding: 32px;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	grid-gap: 32px;
+	grid-auto-rows: 400px;
+}
+
+.book-container {
+	width: 100%;
+	height: 100%;
+	border-radius: 5%;
+	background: #222021;
+	padding: 16px;
+	color: #b6bebc;
+	display: flex;
+	flex-direction: column;
+	border: 8px solid #222021;
+	transition:
+		transform ease 0.5s,
+		box-shadow ease 0.5s;
+}
+
+.book-container:hover {
+	transform: translate(0px, -5px);
+	box-shadow: 0px 5px 5px rgba(0, 0, 0, 1);
+}
+
+.book-container:hover .read {
+	color: white;
+}
+
+.bottom	{
+	margin-top: auto;
+	display: flex;
+	align-items: center;
+}
+
+.bottom img {
+	width: 40px;
+	height: 40px;
+}
+
+.bottom img:hover {
+	content: url("./img/deleteHover.svg");
+}
+
+.bottom .container {
+	margin-left: auto;
+}
+
+.pages {
+	margin: 8px;
+	text-align: right;
+}
+
+.read {
+	text-align: right;
+	margin: 8px;
+	margin-top: 0;
+}
+
+.title, .author {
+	text-align: center;
+}
+
+.title {
+	font-size: 2rem;
+	margin: 16px;
+}
+
+.author {
+	margin-top: 32px;
+	font-size: 1.4rem;
+}
+
+form.add-book {
+	display: grid;
+	grid-template-rows: repeat(4, 1fr);
+	grid-gap: min(32px, 15%);
+	height: 350px;
+	width: 230px;
+}
+
+input {
+	padding: 4px;
+}
+
+form > div {
+	display: flex;
+	flex-direction: column;
+}
+
+label[for="read"] {
+	text-align: center;
+	margin-bottom: 8px;
+}
+
+.close-button-container {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	width: 100%;
+	height: 30px;
+}
+
+.close-button-container > img {
+	height: 100%;
+	width: auto;
+}
+
+dialog.add-book {
+	all: revert;
+	background: #f0ede4;
+	border: 4px solid #222021;
+	border-radius: 8px;
+}
+
+button[type="submit"] {
+	border-radius: 10px;
+	background: #222021;
+	color: #b6bebc;
+	font-size: 1.1rem;
+}
